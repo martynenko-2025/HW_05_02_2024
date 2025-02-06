@@ -47,5 +47,13 @@ import java.util.Arrays;
             return false;
         }
 
+        boolean isPersonExists(Person[] person) {
+            for (Person p : person) {
+                if (!isPersonExists(p)) {
+                    return false;
+                }
+            }
+            return true;
+        }
     }
 
