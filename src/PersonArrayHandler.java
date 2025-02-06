@@ -1,4 +1,8 @@
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
+
+
 
     public class PersonArrayHandler {
         private Person[] array;
@@ -9,32 +13,33 @@ import java.util.Arrays;
 
         @Override
         public String toString() {
-            String result="";
-            for (Person person: array){
-                result+=person+System.lineSeparator();
+            String result = "";
+            for (Person person : array) {
+                result += person + System.lineSeparator();
             }
             return result;
         }
 
-        public Person get(int index){
-            if (index<0 || index>= array.length){
+        public Person get(int index) {
+            if (index < 0 || index >= array.length) {
                 return null;
             } else {
                 return array[index];
             }
         }
-        public int indexOfMaxAgePerson(){
+
+        public int indexOfMaxAgePerson() {
             return indexOfMaxAgePerson(0);
         }
 
-        public int indexOfMaxAgePerson(int index){
-            int maxIndex=Math.max(index,0);
+        public int indexOfMaxAgePerson(int index) {
+            int maxIndex = Math.max(index, 0);
             for (int i = index; i < array.length; i++) {
-                if (array[i].getAge() > array[maxIndex].getAge()){
+                if (array[i].getAge() > array[maxIndex].getAge()) {
                     maxIndex = i;
                 }
             }
-            return maxIndex>=array.length?-1:maxIndex;
+            return maxIndex >= array.length ? -1 : maxIndex;
 
         }
 
@@ -54,6 +59,17 @@ import java.util.Arrays;
                 }
             }
             return true;
+        }
+
+        List retainAll(Person[] person) {
+            List<Person> result = new ArrayList<>();
+            for (Person p : person) {
+                if (isPersonExists(p)) {
+                    result.add(p);
+                }
+            }
+
+            return result;
         }
     }
 
