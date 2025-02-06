@@ -11,6 +11,16 @@ public class Main {
         PersonArrayHandler handler = new PersonArrayHandler(people);
         System.out.println(handler);
         System.out.println("Самый старший: " + handler.get(handler.indexOfMaxAgePerson()));
+
+        Person person = handler.get(4);
+        System.out.println(person);
+
+
+        System.out.println(handler.isPersonExists(new Person("Ron", 21)) ? " нашли" : "не нашли");
+        System.out.println(handler.isPersonExists(handler.get(4)) ? " нашли" : "не нашли");
+        System.out.println(handler.isPersonExists(people[4]) ? " нашли" : "не нашли");
+
+
     }
 }
 

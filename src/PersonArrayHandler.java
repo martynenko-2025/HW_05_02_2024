@@ -38,5 +38,14 @@ import java.util.Arrays;
 
         }
 
+        public boolean isPersonExists(Person person) {
+            for (Person p : array) {
+                if (p.equals(person)) {
+                    return true;
+                }
+            }
+            return false;
+        }
+
     }
 
